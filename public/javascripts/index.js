@@ -1,3 +1,5 @@
+console.log('THIS')
+
 fetch('https://lwc-with-lightning-out.herokuapp.com/token')
   .then(response => {
     console.log(JSON.stringify(response));
