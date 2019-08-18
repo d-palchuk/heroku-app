@@ -16,8 +16,9 @@ const REDIRECT_URI    = '/oauth2/callback';
 let token = '';
 
 let app  = express();
+let port = process.env.PORT || 8000;
 
-app.set('port', process.env.PORT || 8000);
+// app.set('port', process.env.PORT || 8000);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -72,7 +73,7 @@ app.get('/' , (request, response, next) => {
   response.sendfile('public/pages/index.html');
 } );
 
-
-https.createServer(app).listen(8000, () => {
-  console.log(`Server listening on port: ${app.get('port')}`);
-});
+app.listen(port);
+// https.createServer(app).listen(8000, () => {
+//   console.log(`Server listening on port: ${app.get('port')}`);
+// });
