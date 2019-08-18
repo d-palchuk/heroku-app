@@ -68,8 +68,8 @@ app.get('/token', (req, res) => {
 
 
 app.get('/' , (request, response, next) => {
-  response.redirect('/oauth2/auth');
-  //response.sendfile('public/pages/index.html');
+  // response.redirect('/oauth2/auth');
+  response.sendfile('public/pages/index.html');
 } );
 
 
