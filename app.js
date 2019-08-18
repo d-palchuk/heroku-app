@@ -64,6 +64,10 @@ app.get('/oauth2/callback', (req, res) => {
   });
 });
 
+app.get('/' , (request, response, next) => {
+  response.redirect('/oauth2/auth');
+} );
+
 app.get('/token', (req, res) => {
   res.send({ token : token });
 });
@@ -72,9 +76,5 @@ app.get('/index' , (request, response, next) => {
   response.sendfile('public/pages/index.html');
 } );
 
-
-app.get('/' , (request, response, next) => {
-  response.redirect('/oauth2/auth');
-} );
 
 app.listen(port);
