@@ -39,7 +39,7 @@ let oauth2 = new jsforce.OAuth2({
 // Get authorization url and redirect to it.
 //
 app.get('/oauth2/auth', (req, res) => {
-  res.redirect(oauth2.getAuthorizationUrl({ scope : 'api id web' }));
+  res.redirect(oauth2.getAuthorizationUrl({ scope : 'full' }));
 });
 
 //
