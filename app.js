@@ -17,7 +17,7 @@ let token = '';
 
 let app  = express();
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 8000);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -68,7 +68,8 @@ app.get('/token', (req, res) => {
 
 
 app.get('/' , (request, response, next) => {
-  response.sendfile('public/pages/index.html');
+  response.redirect('/oauth2/auth');
+  //response.sendfile('public/pages/index.html');
 } );
 
 
