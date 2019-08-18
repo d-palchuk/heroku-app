@@ -1,10 +1,10 @@
-fetch('https://lwc-with-lightning-out.herokuapp.com/token')
-  .then(response => {
-    console.log(JSON.stringify(response));
-  })
-  .catch(error => {
-    console.log('NO TOKEN')
-  });
+// fetch('https://lwc-with-lightning-out.herokuapp.com/token')
+//   .then(response => {
+//     console.log(JSON.stringify(response));
+//   })
+//   .catch(error => {
+//     console.log('NO TOKEN')
+//   });
 
 // $Lightning.use("c:lightningOutApp",
 //   () => {                                           // Callback once framework and app loaded
