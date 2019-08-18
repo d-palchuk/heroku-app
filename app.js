@@ -18,7 +18,6 @@ let token = '';
 let app  = express();
 let port = process.env.PORT || 8000;
 
-// app.set('port', process.env.PORT || 8000);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -67,13 +66,13 @@ app.get('/token', (req, res) => {
   res.send({ token : token });
 });
 
-
-app.get('/' , (request, response, next) => {
-  // response.redirect('/oauth2/auth');
+app.get('/index' , (request, response, next) => {
   response.sendfile('public/pages/index.html');
 } );
 
+
+app.get('/' , (request, response, next) => {
+  response.redirect('/oauth2/auth');
+} );
+
 app.listen(port);
-// https.createServer(app).listen(8000, () => {
-//   console.log(`Server listening on port: ${app.get('port')}`);
-// });
