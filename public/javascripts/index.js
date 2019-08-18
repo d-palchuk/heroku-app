@@ -2,7 +2,7 @@ console.log('THIS')
 
 fetch('https://lwc-with-lightning-out.herokuapp.com/token')
   .then(response => {
-    console.log(JSON.stringify(response));
+    console.log(response.json());
   })
   .catch(error => {
     console.log('NO TOKEN')
