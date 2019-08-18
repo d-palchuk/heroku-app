@@ -57,8 +57,10 @@ app.get('/oauth2/callback', (req, res) => {
     console.log(conn.instanceUrl);
     console.log("User ID: " + userInfo.id);
     console.log("Org ID: " + userInfo.organizationId);
+
+    token = conn.accessToken;
     // ...
-    res.send('success'); // or your desired response
+    res.redirect('/index'); // or your desired response
   });
 });
 
