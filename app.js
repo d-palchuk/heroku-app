@@ -76,7 +76,7 @@ app.get('/token', (req, res) => {
 app.get('/index' , (req, res, next) => {
 
   if (token === '' ) res.redirect('/oauth2/auth');
-    else res.sendfile('public/pages/index.html');
+    else res.sendfile('pages/index.html');
 } );
 
 
