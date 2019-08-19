@@ -3,9 +3,6 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/token')
     return response.json();
   })
   .then(data => {
-    console.log(JSON.stringify(data));
-    console.log(data.token);
-
     $Lightning.use("c:lightningOutApp", () => {
       $Lightning.createComponent(
         "c:lightningOutCmp",
