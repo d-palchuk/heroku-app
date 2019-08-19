@@ -1,17 +1,18 @@
 let express      = require('express');
 let path         = require('path');
 let fs           = require('fs');
-let https        = require('https');
+
 let request      = require('request');
 let bodyParser   = require('body-parser');
+
+let cookie       = require('cookie');
 let cookieParser = require('cookie-parser');
-let createError  = require('http-errors');
 let jsforce      = require('jsforce');
 
 const CONSUMER_KEY    = '3MVG9G9pzCUSkzZshQPF13Ib7bBPk2kQ3pVcnAyPePRUgLyC4eMsa4CasJMeNNBUuOKWHNG2zmSKUKt7bBFth';
 const CONSUMER_SECRET = '0A76794BE73E909EDB0A93C24CC83C38791E246234EA1E5D0484D8360F279B54';
-const ENDPOINT        = 'https://lwc-with-lightning-out-dev-ed.lightning.force.com';
 const REDIRECT_URI    = 'https://lwc-with-lightning-out.herokuapp.com/oauth2/callback';
+const ENDPOINT        = 'https://lwc-with-lightning-out-dev-ed.lightning.force.com';
 
 let token = '';
 
@@ -64,16 +65,18 @@ app.get('/oauth2/callback', (req, res) => {
   });
 });
 
-app.get('/' , (request, response, next) => {
-  response.redirect('/oauth2/auth');
+app.get('/' , (req, res, next) => {
+  res.redirect('/oauth2/auth');
 } );
 
 app.get('/token', (req, res) => {
   res.send({ token : token });
 });
 
-app.get('/index' , (request, response, next) => {
-  response.sendfile('public/pages/index.html');
+app.get('/index' , (req, res, next) => {
+
+  if (token === '' ) res.redirect('/oauth2/auth');
+    else res.sendfile('public/pages/index.html');
 } );
 
 
