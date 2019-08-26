@@ -80,9 +80,9 @@ app.get('/index' , (req, res, next) => {
     else res.sendfile('public/pages/index.html');
 } );
 
-app.get('/widget', (req, res) => {
-  res.send({ token : token });
-});
+// app.get('/widget', (req, res) => {
+//   res.send({ token : token });
+// });
 
 
 app.listen(port);
