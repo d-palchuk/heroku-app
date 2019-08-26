@@ -12,5 +12,5 @@ $Lightning.use("c:lightningOutApp", () => {
     }
     );
 },
-'https://food-delivery-developer-edition.ap15.force.com/customers/s/'
+'https://food-delivery-developer-edition.ap15.force.com/customers'
 );
