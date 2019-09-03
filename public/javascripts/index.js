@@ -23,11 +23,12 @@ function createWidgetForGuest(restaurantId) {
     $Lightning.createComponent(
     "c:widgetFoodDelivery",
     {
-      restaurantId : restaurantId
+      "restaurantId" : restaurantId
     },
     "main",
     (cmp) => {
         console.log("Hello Guest!");
+        console.log(restaurantId)
     }
     );
   },
