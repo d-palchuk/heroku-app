@@ -1,39 +1,53 @@
-fetch('https://lwc-with-lightning-out.herokuapp.com/token')
+fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
   .then(response => {
     return response.json();
   })
   .then(data => {
-    createLightningComponents(data.token);
+    if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
+
+    if (data.accessToken) {
+      createWidgetForAdmin(data.restaurantId, data.accessToken);
+    } else {
+      createWidgetForGuest(data.restaurantId);
+    }
   })
   .catch(error => {
-    console.log('NO TOKEN')
+    alert('You are break this!')
   });
 
 
-function createLightningComponents(token) {
+
+function createWidgetForGuest(restaurentId) {
   $Lightning.use("c:lightningOutApp", () => {
-
     $Lightning.createComponent(
-      "c:lightningOutCmp",
-      {},
-      "main",
-      (cmp) => {
-        console.log("LWC component was created");
-        // do some stuff
-      }
+    "c:widgetFoodDelivery",
+    {
+        restaurantId : restaurentId
+    },
+    "main",
+    (cmp) => {
+        console.log("Hello Guest!");
+    }
     );
+  },
+  'https://food-delivery-developer-edition.ap15.force.com/customers'
+  );
+}
 
+function createWidgetForAdmin(restaurentId, accessToken) {
+  $Lightning.use("c:lightningOutApp", () => {
     $Lightning.createComponent(
-      "c:formCreateReadEditAccount",
-      {},
-      "sidebar",
-      (cmp) => {
-        console.log("LWC component was created");
-        // do some stuff
-      }
+    "c:widgetFoodDelivery",
+    {
+        restaurantId : restaurentId
+    },
+    "main",
+    (cmp) => {
+        console.log("Hello Admin!");
+    }
     );
   },
   'https://lwc-with-lightning-out-dev-ed.lightning.force.com',
-  token
+  accessToken
   );
 }
