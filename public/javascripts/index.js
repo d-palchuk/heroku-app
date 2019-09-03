@@ -3,7 +3,6 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     return response.json();
   })
   .then(data => {
-    console.log('ZHOPA')
     console.log(JSON.stringify(data))
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
@@ -19,12 +18,12 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
 
 
 
-function createWidgetForGuest(restaurentId) {
+function createWidgetForGuest(restaurantId) {
   $Lightning.use("c:lightningOutApp", () => {
     $Lightning.createComponent(
     "c:widgetFoodDelivery",
     {
-        restaurantId : restaurentId
+      restaurantId : restaurantId
     },
     "main",
     (cmp) => {
@@ -36,12 +35,12 @@ function createWidgetForGuest(restaurentId) {
   );
 }
 
-function createWidgetForAdmin(restaurentId, accessToken) {
+function createWidgetForAdmin(restaurantId, accessToken) {
   $Lightning.use("c:lightningOutApp", () => {
     $Lightning.createComponent(
     "c:widgetFoodDelivery",
     {
-        restaurantId : restaurentId
+      restaurantId : restaurantId
     },
     "main",
     (cmp) => {
