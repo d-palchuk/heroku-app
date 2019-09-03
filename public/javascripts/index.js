@@ -9,7 +9,7 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     if (data.accessToken) {
       createWidgetForAdmin(data.restaurantId, data.accessToken);
     } else {
-      createWidgetForGuest(data.restaurantId);
+      createWidgetForGuest(String(data.restaurantId));
     }
   })
   .catch(error => {
