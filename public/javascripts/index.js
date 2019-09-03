@@ -9,9 +9,9 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
     if (data.accessToken) {
-      createWidgetForAdmin(data.restaurantId, data.accessToken);
+      createWidgetForAdmin(data.data.restaurantId, data.data.accessToken);
     } else {
-      createWidgetForGuest(data.restaurantId);
+      createWidgetForGuest(data.data.restaurantId);
     }
   })
   .catch(error => {
