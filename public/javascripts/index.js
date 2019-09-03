@@ -19,6 +19,7 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
 
 
 function createWidgetForGuest(restaurantId) {
+  console.log(`createWidgetForGuest : ${restaurantId}`)
   $Lightning.use("c:lightningOutApp", () => {
     $Lightning.createComponent(
     "c:widgetFoodDelivery",
