@@ -3,7 +3,7 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     return response.json();
   })
   .then(data => {
-    console.log(JSON.stringify(data))
+    console.log(data)
     console.log(typeof data)
 
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
