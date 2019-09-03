@@ -94,5 +94,3 @@ app.get('/login' , (req, res, next) => {
 
 
 app.listen(port);
-
-function getPageData(res)
