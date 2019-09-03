@@ -5,16 +5,14 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
   .then(data => {
     console.log(JSON.stringify(data))
 
-    let restId = data.restaurantId;
-
-    console.log(`RESTAURANT_ID : ${restId}`);
+    data = JSON.parse(data);
 
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
     if (data.accessToken) {
       createWidgetForAdmin(data.restaurantId, data.accessToken);
     } else {
-      createWidgetForGuest(restId);
+      createWidgetForGuest(data.restaurantId);
     }
   })
   .catch(error => {
