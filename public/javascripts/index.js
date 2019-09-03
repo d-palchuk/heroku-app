@@ -3,6 +3,8 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     return response.json();
   })
   .then(data => {
+    console.log('ZHOPA')
+    console.log(JSON.stringify(data))
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
     if (data.accessToken) {
