@@ -71,6 +71,10 @@ app.get('/' , (req, res, next) => {
   // res.redirect('/oauth2/auth');
 } );
 
+app.get('/index' , (req, res, next) => {
+  res.sendfile('public/pages/index.html');
+} );
+
 app.get('/food', (req, res) => {
   if (PAGE_DATA.restaurantId !== RESTAURANT_FOOD_ID) {
     PAGE_DATA.accessToken    = undefined;
@@ -95,9 +99,7 @@ app.get('/getWidgetData', (req, res) => {
 });
 
 app.get('/login' , (req, res, next) => {
-
-  if (PAGE_DATA.accessToken === '' ) res.redirect('/oauth2/auth');
-    else res.sendfile('public/pages/index.html');
+  res.redirect('/oauth2/auth');
 } );
 
 
