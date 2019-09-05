@@ -1,3 +1,6 @@
+const RESTAURANT_FOOD_NAME   = 'food_dreams';
+const RESTAURANT_DRINKS_NAME = 'alc_paradise';
+
 fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
   .then(response => {
     return response.json();
@@ -6,6 +9,7 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
 
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
+    defineRestaurantHeaderInfo(data.restaurantName);
     createFoodDeliveryWidget(data.restaurantId, data.accessToken);
 
   })
@@ -13,6 +17,10 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     alert('You\'ve broken this!')
   });
 
+
+function defineRestaurantHeaderInfo(restaurantName) {
+  document.querySelector('#restaurantInfoContainer').appendChild(document.importNode(document.querySelector(`#${restaurantName}`).content, true));
+}
 
 function createFoodDeliveryWidget(restaurantId, accessToken) {
   $Lightning.use("c:lightningOutApp", () => {

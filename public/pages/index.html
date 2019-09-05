@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../_slds/styles/salesforce-lightning-design-system.css" />
     <link rel="stylesheet" type="text.css" href="../stylesheets/style.css">
 
-    <script defer src="https://lwc-with-lightning-out-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
     <script defer
         src="https://food-delivery-developer-edition.ap15.force.com/customers/lightning/lightning.out.js"></script>
+    <script defer src="https://lwc-with-lightning-out-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
     <script defer src="javascripts/index.js"></script>
 
     <title>Lightning Out App</title>
@@ -20,32 +20,8 @@
     <header class="slds-page-header">
         <div class="slds-page-header__row">
             <div class="slds-page-header__col-title">
-                <div class="slds-media">
-                    <div class="slds-media__figure">
-                        <span class="slds-icon_container slds-icon-standard-opportunity" title="Restaurant logo">
-                            <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                                <use xlink:href="/_slds/icons/standard-sprite/svg/symbols.svg#account"></use>
-                            </svg>
-                            <span class="slds-assistive-text">Restaurant logo</span>
-                        </span>
-                    </div>
-                    <div class="slds-media__body">
-                        <div class="slds-page-header__name">
-                            <div class="slds-page-header__name-title">
-                                <h1>
-                                    <span
-                                        id="restaurantName"
-                                        class="slds-page-header__title slds-truncate"
-                                        title="Restaurant Name">
-                                        Restaurant Name
-                                    </span>
-                                </h1>
-                            </div>
-                        </div>
-                        <p id="restaurantDescription" class="slds-page-header__name-meta">
-                            Restaurant Description
-                        </p>
-                    </div>
+                <div id="restaurantInfoContainer" class="slds-media">
+                    <!-- TEMPLATE INFO SLOT -->
                 </div>
             </div>
         </div>
@@ -56,6 +32,69 @@
     </main>
 
     <footer></footer>
+
+
+    <!-- TEMPLATES -->
+
+    <!-- FOOD RESTAURANT INFO -->
+    <template id="food_dreams">
+        <div class="slds-media__figure">
+            <span class="slds-icon_container slds-icon-standard-opportunity" title="Restaurant logo">
+                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                    <use xlink:href="/_slds/icons/custom-sprite/svg/symbols.svg#custom65"></use>
+                </svg>
+                <span class="slds-assistive-text">Restaurant logo</span>
+            </span>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                    <h1>
+                        <span
+                            id="restaurantName"
+                            class="slds-page-header__title slds-truncate"
+                            title="Restaurant Name">
+                            Food Dreams
+                        </span>
+                    </h1>
+                </div>
+            </div>
+            <p id="restaurantDescription" class="slds-page-header__name-meta">
+                The delicious food ever.
+            </p>
+        </div>
+    </template>
+
+
+    <!-- DRINKS RESTAURANT INFO -->
+    <template id="alc_paradise">
+        <div class="slds-media__figure">
+            <span class="slds-icon_container slds-icon-standard-opportunity" title="Restaurant logo">
+                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                    <use xlink:href="/_slds/icons/custom-sprite/svg/symbols.svg#custom56"></use>
+                </svg>
+                <span class="slds-assistive-text">Restaurant logo</span>
+            </span>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                    <h1>
+                        <span
+                            id="restaurantName"
+                            class="slds-page-header__title slds-truncate"
+                            title="Restaurant Name">
+                            Alcoholic Paradise
+                        </span>
+                    </h1>
+                </div>
+            </div>
+            <p id="restaurantDescription" class="slds-page-header__name-meta">
+                Enjoy your life bro!
+            </p>
+        </div>
+    </template>
+
 </body>
 
 </html>
