@@ -9,7 +9,7 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
 
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
-    defineRestaurantHeaderInfo(data.restaurantName);
+    defineRestaurantHeader(data.restaurantName, data.accessToken);
     createFoodDeliveryWidget(data.restaurantId, data.accessToken);
 
   })
@@ -18,8 +18,12 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
   });
 
 
-function defineRestaurantHeaderInfo(restaurantName) {
+function defineRestaurantHeader(restaurantName, accessToken) {
   document.querySelector('#restaurantInfoContainer').appendChild(document.importNode(document.querySelector(`#${restaurantName}`).content, true));
+
+  if (!!accessToken === false) {
+    document.querySelector('#headerRow').appendChild(document.importNode(document.querySelector(`#loginButton`).content, true));
+  }
 }
 
 function createFoodDeliveryWidget(restaurantId, accessToken) {

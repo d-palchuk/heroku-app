@@ -18,7 +18,7 @@
 
 <body>
     <header class="slds-page-header">
-        <div class="slds-page-header__row">
+        <div id="headerRow" class="slds-page-header__row slds-grid_align-spread">
             <div class="slds-page-header__col-title">
                 <div id="restaurantInfoContainer" class="slds-media">
                     <!-- TEMPLATE INFO SLOT -->
@@ -95,6 +95,20 @@
         </div>
     </template>
 
+    <!-- LOGIN BUTTON -->
+
+    <template id="loginButton">
+        <div>
+            <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+                </svg>
+            </span>
+            <h2>Admin?
+                <a href="/login">Log in</a>
+            </h2>
+        </div>
+    </template>
 </body>
 
 </html>
