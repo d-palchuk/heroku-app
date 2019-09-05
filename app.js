@@ -83,7 +83,7 @@ app.get('/drinks', (req, res) => {
 });
 
 app.get('/getWidgetData', (req, res) => {
-  res.send({ data : pageData });
+  res.send(pageData);
 });
 
 app.get('/login' , (req, res, next) => {

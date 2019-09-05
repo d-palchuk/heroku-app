@@ -3,16 +3,16 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
     return response.json();
   })
   .then(data => {
-    console.log(data)
-    console.log(typeof data)
 
     if (!!data.restaurantId === false) fetch('https://lwc-with-lightning-out.herokuapp.com/');
 
-    if (data.accessToken) {
-      createWidgetForAdmin(data.data.restaurantId, data.data.accessToken);
-    } else {
-      createWidgetForGuest(data.data.restaurantId);
-    }
+    createWidgetForAdmin(data.restaurantId, data.accessToken);
+
+    // if (data.accessToken) {
+    //   createWidgetForAdmin(data.restaurantId, data.accessToken);
+    // } else {
+    //   createWidgetForGuest(data.restaurantId);
+    // }
   })
   .catch(error => {
     alert('You are break this!')
@@ -21,7 +21,6 @@ fetch('https://lwc-with-lightning-out.herokuapp.com/getWidgetData')
 
 
 function createWidgetForGuest(restaurantId) {
-  console.log(`createWidgetForGuest : ${restaurantId}`)
   $Lightning.use("c:lightningOutApp", () => {
     $Lightning.createComponent(
     "c:widgetFoodDelivery",
@@ -31,7 +30,6 @@ function createWidgetForGuest(restaurantId) {
     "main",
     (cmp) => {
         console.log("Hello Guest!");
-        console.log(restaurantId)
     }
     );
   },
@@ -52,7 +50,7 @@ function createWidgetForAdmin(restaurantId, accessToken) {
     }
     );
   },
-  'https://lwc-with-lightning-out-dev-ed.lightning.force.com',
-  accessToken
+  accessToken ? 'https://lwc-with-lightning-out-dev-ed.lightning.force.com' : 'https://food-delivery-developer-edition.ap15.force.com/customers',
+  accessToken ? accessToken : null
   );
 }
