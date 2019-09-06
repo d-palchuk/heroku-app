@@ -67,8 +67,7 @@ app.get('/oauth2/callback', (req, res) => {
 //OUR API
 
 app.get('/' , (req, res, next) => {
-  res.send('Hello World!');
-  // res.redirect('/oauth2/auth');
+  res.sendfile('public/pages/welcome.html');
 } );
 
 app.get('/index' , (req, res, next) => {
