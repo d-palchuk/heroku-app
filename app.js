@@ -1,9 +1,6 @@
 const express      = require('express');
 const path         = require('path');
-const bodyParser   = require('body-parser');
-const cookieParser = require('cookie-parser');
 const jsforce      = require('jsforce');
-const fs           = require('fs');
 
 const app  = express();
 const port = process.env.PORT || 8000;
@@ -26,9 +23,7 @@ const PAGE_DATA = {
   accessToken    : '',
 };
 
-app.use(cookieParser());
 app.use(express.json());
-app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
