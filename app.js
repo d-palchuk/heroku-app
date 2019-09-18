@@ -65,9 +65,18 @@ app.get('/' , (req, res, next) => {
   res.sendfile('public/pages/welcome.html');
 } );
 
+app.get('/login' , (req, res, next) => {
+  res.redirect('/oauth2/auth');
+} );
+
 app.get('/index' , (req, res, next) => {
   res.sendfile('public/pages/index.html');
 } );
+
+app.get('/getWidgetData', (req, res) => {
+  res.send(PAGE_DATA);
+});
+
 
 app.get('/food', (req, res) => {
   if (PAGE_DATA.restaurantId !== RESTAURANT_FOOD_ID) {
@@ -78,6 +87,7 @@ app.get('/food', (req, res) => {
 
   res.sendfile('public/pages/index.html');
 });
+
 app.get('/drinks', (req, res) => {
   if (PAGE_DATA.restaurantId !== RESTAURANT_DRINKS_ID) {
     PAGE_DATA.accessToken    = undefined;
@@ -87,14 +97,6 @@ app.get('/drinks', (req, res) => {
 
   res.sendfile('public/pages/index.html');
 });
-
-app.get('/getWidgetData', (req, res) => {
-  res.send(PAGE_DATA);
-});
-
-app.get('/login' , (req, res, next) => {
-  res.redirect('/oauth2/auth');
-} );
 
 
 app.listen(port);
