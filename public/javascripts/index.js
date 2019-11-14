@@ -18,12 +18,12 @@ fetch("https://lwc-with-lightning-out.herokuapp.com/getWidgetData") //CALL TO NO
         alert("You've broken this!");
     });
 
+
 function defineRestaurantHeader(restaurantName, token) {
     document.querySelector("#restaurantInfoContainer").appendChild(getTemplateElement(restaurantName));
 
-    if (!!token === false) document.querySelector("#headerRow").appendChild(getTemplateElement('loginButton'));
-
-
+    if (!!token === false)
+        document.querySelector("#headerRow").appendChild(getTemplateElement('loginButton'));
 }
 
 function createFoodDeliveryWidget(restaurantId, token) {
