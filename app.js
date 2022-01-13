@@ -65,6 +65,7 @@ app.get('/oauth2/auth', (req, res) => {
 app.get('/getWidgetData', (req, res) => {
   res.send(PAGE_DATA);
 });
+
 app.get('/food', (req, res) => {
   if (PAGE_DATA.restaurantId !== RESTAURANT_FOOD_ID) {
     PAGE_DATA.accessToken    = undefined;
@@ -74,6 +75,7 @@ app.get('/food', (req, res) => {
 
   res.sendfile('public/pages/index.html');
 });
+
 app.get('/drinks', (req, res) => {
   if (PAGE_DATA.restaurantId !== RESTAURANT_DRINKS_ID) {
     PAGE_DATA.accessToken    = undefined;
@@ -82,6 +84,11 @@ app.get('/drinks', (req, res) => {
   }
 
   res.sendfile('public/pages/index.html');
+});
+
+app.get('/caterpillar', (req, res) => {
+
+  res.sendfile('public/pages/caterpillar.html');
 });
 
 app.get('/index' , (req, res, next) => {
