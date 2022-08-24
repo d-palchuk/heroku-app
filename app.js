@@ -91,6 +91,11 @@ app.get('/caterpillar', (req, res) => {
   res.sendfile('public/pages/caterpillar.html');
 });
 
+app.get('/redcross', (req, res) => {
+
+  res.sendfile('public/pages/redcross.html');
+});
+
 app.get('/index' , (req, res, next) => {
   res.sendfile('public/pages/index.html');
 } );
