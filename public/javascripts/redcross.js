@@ -3,10 +3,10 @@ function createComponent() {
     const url = 'https://vrpconsulting36-dev-ed.my.site.com/lightningoutdemo';
 
     $Lightning.use(
-        "c:bsGuidedSellFlow", // LIGHTNING APP NAME
+        "c:donationFortmApp", // LIGHTNING APP NAME
         () => {
             $Lightning.createComponent( // CREATE LIGHTNING COMPONENT
-                "c:donationFortmApp", // COMPONENT NAME
+                "c:donationForm", // COMPONENT NAME
                 {}, // COMPONENT ATTRIBUTES
                 "main", // ELEMENT'S ID FOR OUR COMPONENT
                 cmp => {
