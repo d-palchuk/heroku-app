@@ -1,6 +1,6 @@
 function createComponent() {
     const token = undefined;
-    const url = 'https://vrpconsulting36-dev-ed.my.site.com/donation';
+    const url = 'https://vrpconsulting36-dev-ed.my.site.com/lightningoutdemo';
 
     $Lightning.use(
         "c:bsGuidedSellFlow", // LIGHTNING APP NAME
