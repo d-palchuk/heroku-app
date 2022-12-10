@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.9.4",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "jsforce": "^1.9.2"
   },
   "engines": {
