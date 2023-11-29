@@ -29,7 +29,7 @@ function defineRestaurantHeader(restaurantName, token) {
 function createFoodDeliveryWidget(restaurantId, token) {
     let url = token
         ? "https://lwc-with-lightning-out-dev-ed.lightning.force.com"
-        : "https://food-delivery-developer-edition.ap15.force.com/customers";
+        : "https://lwc-with-lightning-out-dev-ed.my.site.com/customers";
 
     $Lightning.use(
         "c:lightningOutApp", // LIGHTNING APP NAME
