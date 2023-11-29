@@ -2,13 +2,13 @@ const RESTAURANT_FOOD_NAME   = "food_dreams";
 const RESTAURANT_DRINKS_NAME = "alc_paradise";
 
 
-fetch("https://lwc-with-lightning-out.herokuapp.com/getWidgetData") //CALL TO NODE
+fetch("https://salesforce-lightning-out.onrender.com//getWidgetData") //CALL TO NODE
     .then(response => {
         return response.json(); //PARSE JSON TO OBJECT
     })
     .then(data => {
         if (!!data.restaurantId === false) {
-            fetch("https://lwc-with-lightning-out.herokuapp.com/"); // GO TO THE WELCOME PAGE
+            fetch("https://salesforce-lightning-out.onrender.com/"); // GO TO THE WELCOME PAGE
         }
 
         defineRestaurantHeader(data.restaurantName, data.accessToken);

@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // REDIRECT_URI - SHOULD BE THE SAME AS IN THE CONNECTED APP THE "CALLBACK URL"
-const REDIRECT_URI    = 'https://lwc-with-lightning-out.herokuapp.com/oauth2/callback';
+const REDIRECT_URI    = 'https://salesforce-lightning-out.onrender.com/oauth2/callback';
 const CONSUMER_KEY    = process.env.CONSUMER_KEY;
 const CONSUMER_SECRET = process.env.CONSUMER_SECRET;
 
