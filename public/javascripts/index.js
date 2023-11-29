@@ -2,7 +2,7 @@ const RESTAURANT_FOOD_NAME   = "food_dreams";
 const RESTAURANT_DRINKS_NAME = "alc_paradise";
 
 
-fetch("https://salesforce-lightning-out.onrender.com//getWidgetData") //CALL TO NODE
+fetch("https://salesforce-lightning-out.onrender.com/getWidgetData") //CALL TO NODE
     .then(response => {
         return response.json(); //PARSE JSON TO OBJECT
     })
